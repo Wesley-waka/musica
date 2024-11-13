@@ -17,11 +17,9 @@ let app;
 auth.onAuthStateChanged(()=>{
     if(!app){
         app = createApp(App);
-
         app.use(createPinia())
         app.use(router);
         app.use(VeeValidatePlugin,{foo: 100});
-        
         app.mount('#app');
     }
 
