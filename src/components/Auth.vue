@@ -146,6 +146,7 @@
 import firebase from "@/includes/firebase";
 import { mapState, mapWriteableState } from "pinia";
 import useModalStore from "@stores/modal";
+import {auth} from "@/includes/firebase";
 
 export default {
     name: "Auth",
@@ -185,7 +186,7 @@ export default {
             
             let userCred = null;
             try {
-                userCred = await firebase.auth() createUserWithEmailAndPassword(
+                userCred = await auth.createUserWithEmailAndPassword(
                 values.email,
                 values.password
             );
